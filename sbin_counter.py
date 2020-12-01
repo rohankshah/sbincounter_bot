@@ -25,7 +25,8 @@ def run_bot(reddit):
                 count_path = os.path.join(os.getcwd(), 'count.txt')
                 count_file = open(count_path, 'a')
                 count_file.truncate(0)
-                file.write(count)
+                count_file.write(count)
+                count_file.close()
             if count%10 == 0:
                 bot_msg = "I am a bot that counts the number of time S BIN has been commented.\n"
                 blank_space = "                                 "
