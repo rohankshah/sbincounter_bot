@@ -22,11 +22,6 @@ def run_bot(reddit):
             print(comments.body)
             if 'sbin' in comments.body.lower() or 's🅱️in' in comments.body.lower():
                 count += 1
-                count_path = os.path.join(os.getcwd(), 'count.txt')
-                count_file = open(count_path, 'a')
-                count_file.truncate(0)
-                count_file.write(str(count))
-                count_file.close()
             if count%10 == 0:
                 bot_msg = "I am a bot that counts the number of time S BIN has been commented.\n"
                 blank_space = "                                 "
@@ -34,12 +29,6 @@ def run_bot(reddit):
                 reply = bot_msg +blank_space +sbin_msg
                 print(reply)
                 comments.reply(reply)
-                path = os.path.join(os.getcwd(), 'sbin_logs.txt')
-                file = open(path, 'a')
-                file.write(reply)
-                file.write('\n')
-                file.close
-
 while True:
     reddit = login()
     run_bot(reddit)
